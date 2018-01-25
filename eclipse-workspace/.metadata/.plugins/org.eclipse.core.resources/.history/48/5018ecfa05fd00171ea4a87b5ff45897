@@ -1,0 +1,132 @@
+body {
+	background-color: cyan;
+	position: relative;
+}
+
+.inner_container {
+	background-color: blue;
+	background: linear-gradient(45deg, #0e0e0e, blue);
+	position: relative;
+	/*top: 50px;
+	left: 350px;*/
+	height: 550px;
+	z-index: 2;
+	margin: 0 auto;
+	width: 60%;
+}
+
+.heading {
+	color: magenta;
+	font-family: Verdana, Geneva, sans-serif;
+	padding-left: 10px;
+}
+
+form {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.text-box1, .text-box2, .text-box3, .text-box4, .text-box5 {
+	position: absolute;
+	left: 20px;
+	border: 0px;
+	border-bottom: 2px indigo solid;
+	border-radius: 10px;
+	background: blue;
+	color: white;
+	font-family: Georgia;
+	width:
+}
+
+.text-box1 {
+	top: 100px;
+}
+
+.label2, .label3, .label4, .label5,.label1 {
+	position: absolute;
+	left: 20px;
+	color: pink;
+	font-family: Georgia;
+}
+
+.label1 {
+	position: absolute;
+	top: 80px;
+	color: pink;
+	font-family: Georgia;
+}
+
+.label2 {
+	top: 135px;
+}
+
+.text-box2 {
+	top: 175px;
+}
+
+.label3 {
+	top: 220px;
+}
+
+.text-box3 {
+	top: 270px;
+}
+
+.label4 {
+	top: 315px;
+}
+
+.text-box4 {
+	top: 365px;
+}
+
+.label5 {
+	top: 410px;
+}
+
+.text-box5 {
+	top: 460px;
+}
+
+.submitButton {
+	position: absolute;
+	background-color: pink;
+	color: red;
+	margin: 0 auto;
+	width: 50%;
+	left: 100px;
+	top: 490px;
+}
+
+.submitButton:hover {
+	background-color: #4caf50;
+	color: white;
+}
+
+input,p,.submitButton {
+	width: 35%;
+	margin: 0 auto;
+}
+
+@media screen and (max-width: 700px) {
+	.inner-container {
+		width: 50%;
+	}
+	
+	form,input,p {
+	width: 70%;
+	}
+	
+	
+}
+
+@media screen and (max-width: 400px) {
+	.inner-container {
+		width: 100%;
+	}
+	
+	form,input,p {
+	width: 50%;
+	}
+	
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>RSS Feed</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Feeds</h1>
+		</header>
+
+		<form action="RSSRetrieveServlet" method="post">
+		<input type="submit" value="Technology" class="business" url='https://news.google.com/news/rss/headlines/section/topic/TECHNOLOGY?ned=in&hl=en-IN&gl=IN'>
+		
+		</form>
+
+		<article>
+			<h1>London</h1>
+			<p>You can choose any one of the links.</p>
+		</article>
+
+
+	</div>
+
+</body>
+</html>

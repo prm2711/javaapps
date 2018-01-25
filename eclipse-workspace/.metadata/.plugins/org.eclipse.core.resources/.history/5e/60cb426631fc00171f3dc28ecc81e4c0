@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>RSS Feed</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="container">
+		<header>
+			<h1>Feeds</h1>
+		</header>
+        
+		<div class="list-item">
+			<form action="RSSRetrieveServlet" method="post">
+			<i class="fa fa-laptop" aria-hidden="true"></i>
+				<input type="submit" value="Technology" class="business" name='xyz'><br>
+				<i class="fa fa-briefcase" aria-hidden="true"></i> 
+				<input type="submit" value="Business" class="business" name='xyz'><br>
+				<i class="fa fa-trophy" aria-hidden="true"></i>
+				<input type="submit" value="Sports" class="business" name='xyz'>
+			</form>
+		</div>
+       <div class="text-view">
+       View various sections</div>
+	</div>
+
+</body>
+</html>

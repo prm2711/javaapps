@@ -1,0 +1,94 @@
+package com.zilker.servlets;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.zilker.dao.FindPlayerMatches;
+import com.zilker.dao.FindPlayerName;
+import com.zilker.dao.InsertData;
+import com.zilker.dto.Match;
+
+/**
+ * Servlet implementation class PlayerMatchServlet
+ */
+@WebServlet("/PlayerMatchServlet")
+public class PlayerMatchServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public PlayerMatchServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		RequestDispatcher rd;
+		String player = request.getParameter("player");
+		FindPlayerName findPlayer = new FindPlayerName();
+		int tour, play1, play2, win, lose;
+		if (player==null) {
+			response.getWriter().append("Field Empty");
+			rd = request.getRequestDispatcher("playermatch.jsp");
+			rd.include(request, response);
+		} else {
+			tour = findTour.retrieveTournamentID(tourname);
+			play1 = findPlayer.retrievePlayerID(player1);
+			play2 = findPlayer.retrievePlayerID(player2);
+			win = findPlayer.retrievePlayerID(winner);
+			lose = findPlayer.retrievePlayerID(loser);
+			if (tour == -1) {
+				response.getWriter().append("Enter valid Tournament");
+				rd = request.getRequestDispatcher("insertmatch.jsp");
+				rd.include(request, response);
+			} else if (play1 == -1 || play2 == -1 || win == -1 || lose == -1) {
+				response.getWriter().append("Enter valid Player");
+				rd = request.getRequestDispatcher("insertmatch.jsp");
+				rd.include(request, response);
+			} else if (status.equals("Complete") == false && status.equals("Suspended") == false) {
+				response.getWriter().append("Enter valid Status");
+				rd = request.getRequestDispatcher("insertmatch.jsp");
+				rd.include(request, response);
+			} else {
+				match.setTourId(tour);
+				match.setPlay1Id(play1);
+				match.setPlay2Id(play2);
+				match.setWinner(win);
+				match.setLoser(lose);
+				match.setStatus(status);
+				match.setScore(score);
+				insertData.insertMatch(match);
+				rd = request.getRequestDispatcher("home.jsp");
+				request.setAttribute("complete", "success");
+				rd.forward(request, response);
+			}
+		}
+		FindPlayerMatches findPlayer = new FindPlayerMatches();
+		ArrayList<Match> matches=new ArrayList<Match>();
+		matches=findPlayer.retrieveMatch(player);
+		rd = request.getRequestDispatcher("matchesplayer.jsp");
+		request.setAttribute("list",matches);
+		rd.forward(request, response);
+
+	}
+
+}

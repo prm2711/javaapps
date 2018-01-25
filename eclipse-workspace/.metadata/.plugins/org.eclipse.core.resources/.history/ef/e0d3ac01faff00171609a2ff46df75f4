@@ -1,0 +1,75 @@
+package com.zilker.servlets;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.zilker.dao.FindPlayerMatches;
+import com.zilker.dao.FindPlayerName;
+import com.zilker.dto.Match;
+
+/**
+ * Servlet implementation class TwoPlayerMatchServlet
+ */
+@WebServlet("/TwoPlayerMatchServlet")
+public class TwoPlayerMatchServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public TwoPlayerMatchServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.setContentType("text/html");
+		RequestDispatcher rd;
+		String player1 = request.getParameter("player1");
+		int player1id,player2id;
+		String player2 = request.getParameter("player2");
+		FindPlayerMatches findPlayerMatch = new FindPlayerMatches();
+		FindPlayerName findPlayer = new FindPlayerName();
+		ArrayList<Match> matches=new ArrayList<Match>();
+		if (player1 == null || player2==null) {
+			response.getWriter().append("Field Empty");
+			rd = request.getRequestDispatcher("twoplayermatch.jsp");
+			rd.include(request, response);
+		} else {
+
+			player1id = findPlayer.retrievePlayerID(player1);
+			player2id = findPlayer.retrievePlayerID(player2);
+			if (playerid == -1) {
+				response.getWriter().append("Enter valid Player");
+				rd = request.getRequestDispatcher("playermatch.jsp");
+				rd.include(request, response);
+			} else {
+				matches = findPlayerMatch.retrieveMatch(playerid);
+				rd = request.getRequestDispatcher("matchesplayer.jsp");
+				request.setAttribute("list", matches);
+				rd.forward(request, response);
+			}
+		}
+		matches=findPlayer.retrieveResult(player1id, player2id);
+		
+	}
+
+}

@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<title>RSS feed</title>
+</head>
+<body>
+	<%@ page import="java.sql.*"%>
+	<%@ page import="java.net.*"%>
+	<%@ page import="java.io.*"%>
+	<%@ page import="org.json.*"%>
+	<%@ page import="org.w3c.dom.Document"%>
+	<%@ page import="org.xml.sax.*"%>
+	<%@ page import="java.util.regex.*"%>
+
+	<%
+		JSONArray array = (JSONArray) request.getAttribute("array");
+		Pattern p = Pattern.compile("src=[\"](.*?)[\"]");
+		Matcher m;
+
+		try {
+			for (int i = 0; i < array.length(); i++) {
+				JSONObject object3 = (JSONObject) array.get(i);
+				m = p.matcher(object3.getString("description"));
+
+				if (m.find()) {
+					out.print("<img src=\"");
+					out.print(m.group(1));
+					out.print("\" border=\"1\">");
+				}
+				out.println("<br><a href=" + object3.get("link") + " target=_blank>");
+				out.println(" " + object3.get("title") + "</a>");
+			}
+
+		} catch (JSONException je) {
+			System.out.println(je.toString());
+		}
+	%>
+</body>
+</html>

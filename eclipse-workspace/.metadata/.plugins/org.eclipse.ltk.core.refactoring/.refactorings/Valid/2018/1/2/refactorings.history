@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.zilker.validate&apos; to &apos;ContactSchema/src&apos;&#x0D;&#x0A;- Original project: &apos;Valid&apos;&#x0D;&#x0A;- Destination element: &apos;ContactSchema/src&apos;&#x0D;&#x0A;- Original element: &apos;Valid/src/com.zilker.validate&apos;" description="Copy package" destination="=ContactSchema/src" element1="/src&lt;com.zilker.validate" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1515336259972" version="1.0"/>
+</session>

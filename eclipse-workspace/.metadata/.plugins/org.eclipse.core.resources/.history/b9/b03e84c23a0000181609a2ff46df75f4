@@ -1,0 +1,64 @@
+package com.zilker.dto;
+
+public class MatchWithName {
+	private String play1id, play2id, winner, loser,tourid;
+	private String status, score;
+
+	public int getTour() {
+		return tourid;
+	}
+
+	public void setTourId(int tour) {
+		this.tourid = tour;
+	}
+	// get and set id
+	public int getPlay1Id() {
+		return play1id;
+	}
+
+	public void setPlay1Id(int p1id) {
+		this.play1id = p1id;
+	}
+
+	public int getPlay2Id() {
+		return play2id;
+	}
+
+	public void setPlay2Id(int p2id) {
+		this.play2id = p2id;
+	}
+
+	public int getWinner() {
+		return winner;
+	}
+
+	public void setWinner(int win) {
+		this.winner = win;
+	}
+
+	public int getLoser() {
+		return loser;
+	}
+
+	public void setLoser(int loser) {
+		this.loser = loser;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public String getScore() {
+		return score;
+	}
+
+	public void setScore(String score) {
+		this.score = score;
+
+	}
+
+}

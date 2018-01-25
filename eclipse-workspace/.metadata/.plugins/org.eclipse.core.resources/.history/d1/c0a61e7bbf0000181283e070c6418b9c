@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+table {
+	position: absolute;
+	top: 130px;
+    border-collapse: collapse;
+    width: 30%;
+    transition: width 2s, height 2s, transform 2s;
+}
+
+table:hover {
+	transform: rotate(180deg);
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+th,td {
+	padding: 15px;
+    text-align: left;
+}
+
+th {
+	height: 20px;
+	background-color: #FFD700;
+    color: red;
+}
+
+td {
+	height: 10px;
+	background-color: #FFA500;
+	color: black;
+}

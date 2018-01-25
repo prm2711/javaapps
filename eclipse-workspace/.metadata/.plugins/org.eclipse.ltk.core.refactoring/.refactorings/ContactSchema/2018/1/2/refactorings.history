@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 5 packages to &apos;TournamentManagement/src&apos;&#x0D;&#x0A;- Original project: &apos;ContactSchema&apos;&#x0D;&#x0A;- Destination element: &apos;TournamentManagement/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ContactSchema/src/com.zilker.connection&#x0D;&#x0A;     ContactSchema/src/com.zilker.validate&#x0D;&#x0A;     ContactSchema/src/com.zilker.constant&#x0D;&#x0A;     ContactSchema/src/com.zilker.dto&#x0D;&#x0A;     ContactSchema/src/com.zilker.dao" description="Copy packages" destination="=TournamentManagement/src" element1="/src&lt;com.zilker.connection" element2="/src&lt;com.zilker.validate" element3="/src&lt;com.zilker.constant" element4="/src&lt;com.zilker.dto" element5="/src&lt;com.zilker.dao" flags="589830" fragments="5" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1515376659454" version="1.0"/>
+</session>

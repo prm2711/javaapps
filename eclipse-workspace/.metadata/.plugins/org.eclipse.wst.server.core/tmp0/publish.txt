@@ -1,0 +1,6 @@
+#Tomcat publish data
+#Thu Jan 25 10:28:49 IST 2018
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Priyamvada\ Mukund\\eclipse-workspace\\Spring3MVC\\WebContent\\WEB-INF\\lib\\spring-web-4.1.6.RELEASE.jar=WEB-INF/lib/spring-web-4.1.6.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Priyamvada\ Mukund\\eclipse-workspace\\Spring3MVC\\WebContent\\WEB-INF\\lib\\spring-web-4.1.6.RELEASE-sources.jar=WEB-INF/lib/spring-web-4.1.6.RELEASE-sources.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Priyamvada\ Mukund\\eclipse-workspace\\FirstProject\\WebContent\\WEB-INF\\lib\\spring-web-4.1.6.RELEASE.jar=WEB-INF/lib/spring-web-4.1.6.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\Priyamvada\ Mukund\\eclipse-workspace\\FirstProject\\WebContent\\WEB-INF\\lib\\spring-web-4.1.6.RELEASE-sources.jar=WEB-INF/lib/spring-web-4.1.6.RELEASE-sources.jar

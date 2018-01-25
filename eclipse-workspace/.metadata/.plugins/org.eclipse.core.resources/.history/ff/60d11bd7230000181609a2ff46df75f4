@@ -1,0 +1,34 @@
+@charset "ISO-8859-1";
+body {
+	background-image: url("https://akm-img-a-in.tosshub.com/indiatoday/images/story/201503/badminton-650-x-418_033015024738.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+table {
+	top: 30px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+th,td {
+	padding: 15px;
+    text-align: left;
+}
+
+th {
+	height: 100px;
+	background-color: gray;
+    color: white;
+}
+
+td {
+	height: 50px;
+	background-color: #d3d3d3;
+	color: black;
+}
