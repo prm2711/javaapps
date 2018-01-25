@@ -8,7 +8,7 @@
 <title>RSS feed</title>
 </head>
 <body>
-<h1>Current Stories</h1>
+	<h1>Current Stories</h1>
 	<%@ page import="java.sql.*"%>
 	<%@ page import="java.net.*"%>
 	<%@ page import="java.io.*"%>
@@ -19,21 +19,22 @@
 
 	<%
 		JSONArray array = (JSONArray) request.getAttribute("array");
-		
+
 		try {
 			for (int i = 0; i < array.length(); i++) {
 				JSONObject object3 = (JSONObject) array.get(i);
 	%>
 	<div class="news-list">
+		<%
+			out.println("<br>" + object3.get("description"));
+		%>
+	</div>
+	<br>
 	<%
-				out.println("<br>"+ object3.get("description"));
-	%>
-	</div><br>
-	<%
-			}
+		}
 
 		} catch (JSONException je) {
-			System.out.println(je.toString());
+			System.out.println("Incorrect url");
 		}
 	%>
 </body>
