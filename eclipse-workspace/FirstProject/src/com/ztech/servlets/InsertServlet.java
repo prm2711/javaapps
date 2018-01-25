@@ -62,7 +62,7 @@ public class InsertServlet extends HttpServlet {
 		
 		Student student = new Student();
 		student.setRollNo(rollno);
-		student.setStudentName(student_name);
+		//student.setStudentName(student_name);
 		student.setMarks(markValue);
 		student.setMarksPhy(markPhysics);
 		student.setMarksChem(markChem);

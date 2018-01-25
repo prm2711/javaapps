@@ -1,93 +1,29 @@
 body {
 	background-color: cyan;
-	position: relative;
 }
 
 .inner_container {
 	background-color: blue;
-	display: flex;
-	width: 40%;
 	background: linear-gradient(45deg, #0e0e0e, blue);
 	position: relative;
 	/*top: 50px;
-	left: 350px;
-	width: 400px;*/
-	height: 550px;
+	left: 350px;*/
 	z-index: 2;
-	/*bottom: 50px;*/
+	margin: 0 auto;
+	height: 600px;
 }
 
 .heading {
 	color: magenta;
 	font-family: Verdana, Geneva, sans-serif;
-}
-/*
-.top_container {
-	background-color: pink;
-	position: absolute;
-	top: 30px;
-	left: 690px;
-	width: 75px;
-	height: 75px;
+	padding-left: 10px;
 }
 
-.bottom_container {
-	background-color: pink;
-	position: absolute;
-	left: 320px;
-	width: 75px;
-	height: 75px;
-}
-*/
-.label1 {
-	position: absolute;
-	left: 20px;
-	color: pink;
-	font-family: Georgia;
+form,.heading {
 	width: 40%;
-	display: flex;
-}
-/*
-.small_container1 {
-	border: 2px white solid;
-	position: absolute;
-	top: 90px;
-	left: 740px;
-	width: 30px;
-	height: 30px;
-	z-index: 1;
+	margin: 0 auto;
 }
 
-.small_container2 {
-	border: 2px red solid;
-	position: absolute;
-	top: 20px;
-	left: 730px;
-	width: 60px;
-	height: 60px;
-	z-index: 1;
-}
-
-.small_container3 {
-	border: 2px white solid;
-	position: absolute;
-	top: 35px;
-	left: 680px;
-	width: 30px;
-	z-index: 1;
-	height: 30px;
-}
-
-.small_container4 {
-	border: 2px white solid;
-	position: absolute;
-	top: 420px;
-	left: 300px;
-	width: 70px;
-	z-index: 1;
-	height: 50px;
-}
-*/
 .text-box1, .text-box2, .text-box3, .text-box4, .text-box5 {
 	position: absolute;
 	left: 20px;
@@ -97,25 +33,25 @@ body {
 	background: blue;
 	color: white;
 	font-family: Georgia;
-	width: 40%;
-	display: flex;
 }
 
 .text-box1 {
 	top: 100px;
 }
 
-.label2, .label3, .label4, .label5 {
+.label2, .label3, .label4, .label5,.label1 {
 	position: absolute;
 	left: 20px;
 	color: pink;
 	font-family: Georgia;
-	width: 40%;
-	display: flex;
+}
+
+.label1 {
+	top: 80px;
 }
 
 .label2 {
-	top: 125px;
+	top: 135px;
 }
 
 .text-box2 {
@@ -150,20 +86,47 @@ body {
 	position: absolute;
 	background-color: pink;
 	color: red;
-	top: 500px;
-	left: 220px;
-	width: 40%;
-	display: flex;
+	left: 150px;
+	top: 490px;
+	width: 35%;
+	margin: 0 auto;
 }
 
 .submitButton:hover {
 	background-color: #4caf50;
 	color: white;
-	align: center;
+}
+
+input,p {
+	width: 20%;
+	margin: 0 auto;
 }
 
 @media screen and (max-width: 700px) {
-	.inner-container * {
+	.inner-container {
 		width: 100%;
+	}
+	
+	form {
+	width: 100%;
+	}
+	
+	input,p,.submitButton,.heading {
+	width: 40%;
+	}
+	
+}
+
+@media screen and (max-width: 400px) {
+	.inner-container {
+		width: 100%;
+	}
+	
+	form {
+	width: 100%;
+	}
+	
+	,input,p,.submitButton,.heading {
+	width: 40%;
 	}
 }

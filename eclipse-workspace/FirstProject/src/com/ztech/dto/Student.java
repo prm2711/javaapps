@@ -1,25 +1,29 @@
 package com.ztech.dto;
 
 public class Student {
-	private int roll_no;
-	private String student_name;
+	private int rollNo;
+	private String name;
 	private int marks;
 	private int marksphy, markschem;
-
+ 
+	public Student() {
+		rollNo=marks=marksphy=markschem=0;
+		name="";
+	}
 	public int getRollNo() {
-		return roll_no;
+		return rollNo;
 	}
 
 	public void setRollNo(int rollno) {
-		this.roll_no = rollno;
+		this.rollNo = rollno;
 	}
 
-	public String getStudentName() {
-		return student_name;
+	public String getName() {
+		return name;
 	}
 
-	public void setStudentName(String student) {
-		this.student_name = student;
+	public void setName(String student) {
+		this.name = student;
 	}
 
 	public int getMarksPhy() {

@@ -23,7 +23,6 @@ public class InsertData {
 			statement = connection.createStatement();
 			execute.insertStudent(connection, student);
 
-			logger.info("Data is inserted");
 
 		} catch (SQLException se) {
 			// Handle errors for JDBC

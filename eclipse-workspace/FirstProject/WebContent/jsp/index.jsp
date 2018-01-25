@@ -1,21 +1,18 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta charset="ISO-8859-1">
 <title>Student form</title>
-<link rel="stylesheet" type="text/css" href="css/format.css">
+<!-- <link rel="stylesheet" type="text/css" href="css/format.css"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-	<div class="main-container">
-		<div class="top_container"></div>
-		<div class="small_container1"></div>
-		<div class="small_container2"></div>
-		<div class="small_container3"></div>
-		<div class="small_container4"></div>
+${msg }
+		
 		<div align="center" class="inner_container">
-			<form method="post" action="InsertServlet"
-				onsubmit="return validateForm()">
+			<form id="loginForm" action="save"
+				onsubmit="return validateForm()" >
 
 				<h1 class="heading">Student Details</h1>
 				<p class="label1">Student Roll Number:</p>
@@ -32,14 +29,13 @@
 					id="marksphy"><br> <br>
 				<p class="label5">Student Marks in Chemistry:</p>
 				<br> <input class="text-box5" type="text" name="markschem"
-					id="markschem"><br> <br> <input
-					class="submitButton" type="submit" value="Submit Details">
+					id="markschem"><br> <br> 
+					<input class="submitButton" type="submit" value="Submit">
 
 			</form>
 		</div>
 		<div class="bottom_container"></div>
 
-	</div>
-	<script src="js/insertdata.js"></script>
+	<!-- <script src="js/insertdata.js"></script> -->
 </body>
 </html>

@@ -15,7 +15,7 @@ public class ExecuteStatement {
 	public void insertStudent(Connection connection,Student student) {
 		ConnectionSetup conn = new ConnectionSetup();
 		int rollno=student.getRollNo();
-		String student_name=student.getStudentName();
+		String student_name=student.getName();
 		int marks=student.getMarks();
 		int phymarks=student.getMarksPhy();
 		int chemmarks=student.getMarksChem();
