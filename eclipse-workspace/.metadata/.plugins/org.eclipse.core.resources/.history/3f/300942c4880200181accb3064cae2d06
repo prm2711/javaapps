@@ -1,0 +1,43 @@
+package com.zilker.delegate;
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.zilker.dao.FindCountry;
+import com.zilker.dao.FindPlayerName;
+import com.zilker.dao.FindTournamentName;
+import com.zilker.dao.InsertData;
+import com.zilker.dto.Match;
+import com.zilker.dto.Player;
+
+public class InsertPlayerDelegate {
+
+	public boolean checkValidity(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String player = request.getParameter("player");
+		String country = request.getParameter("country");
+		int origpoints= Integer.parseInt(request.getParameter("origpoints"));
+		int newpoints= Integer.parseInt(request.getParameter("origpoints"));
+		int numbermatch= Integer.parseInt(request.getParameter("origpoints"));
+		int won= Integer.parseInt(request.getParameter("origpoints"));
+		int lost= Integer.parseInt(request.getParameter("origpoints"));
+		int draw= Integer.parseInt(request.getParameter("origpoints"));
+		Player player=new Player();
+		InsertData insertData = new InsertData();
+		
+			match.setTourId(tour);
+			match.setPlay1Id(play1);
+			match.setPlay2Id(play2);
+			match.setWinner(win);
+			match.setLoser(lose);
+			match.setStatus(status);
+			match.setScore(score);
+			insertData.insertMatch(match);
+			response.getWriter().append("Data inserted Successfully");
+			return true;
+		
+
+	}
+
+}

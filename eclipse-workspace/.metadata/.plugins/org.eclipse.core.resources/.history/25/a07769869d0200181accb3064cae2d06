@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ page import="com.zilker.dto.*"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>User Home</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/button-style.css">
+<link rel="stylesheet" type="text/css" href="css/home.css">
+</head>
+<body onload="blink();">
+	<center>
+		<h1>Home Page</h1>
+	</center>
+	<h2 id="para">Welcome ${username}</h2>
+
+	<table>
+		<tr>
+			<th>Player Name</th>
+			<th>New Points</th>
+		</tr>
+		<c:forEach var="p"  begin="0" end="5" items="${play}">
+			<tr>
+				<td>${p.getPlayerName()}</td>
+				<td>${p.getNew()}</td>
+			</tr>
+		</c:forEach>
+	</table>
+	<form method="post" action="RetrievePlayerServlet"
+		class="form-navigate insert">
+		<input class="navigate" type="submit" value="Retrieve Players">
+	</form>
+	<form method="post" action="twoplayermatch.jsp"
+		class="form-navigate player">
+		<input class="navigate" type="submit"
+			value="Matches between Players in a Tournament">
+	</form>
+	<form method="post" action="playertour.jsp" class="form-navigate match">
+		<input class="navigate" type="submit"
+			value="Player Results in Tournament">
+	</form>
+	<form method="post" action="playercountry.jsp"
+		class="form-navigate improve">
+		<input class="navigate" type="submit" value="View Player by Country">
+	</form>
+	<form method="post" action="LogoutServlet" class="button-form-logout">
+		<input class="logoutButton" type="submit" value="Logout">
+	</form>
+	
+	<div class="partner-div">
+		<img
+			src="http://bwfworldchampionships.com/wp-content/uploads/2014/07/BWF_logo_holding_device1.jpg"
+			alt="Partner">
+	</div>
+	<script src="js/home.js"></script>
+</body>
+</html>

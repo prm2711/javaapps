@@ -1,0 +1,27 @@
+$(document).ready(function() {
+
+  $('table.paginated').each(function() {
+
+    var currentPage = 0;
+
+    var numPerPage = 10;
+
+    var $table = $(this);
+
+    $table.find('tbody tr').show()
+
+      .lt(currentPage * numPerPage)
+
+        .hide()
+
+      .end()
+
+      .gt((currentPage + 1) * numPerPage - 1)
+
+        .hide()
+
+      .end();
+
+  });
+
+});

@@ -1,0 +1,45 @@
+package com.zilker.delegate;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.zilker.dao.FindPlayerMatches;
+import com.zilker.dao.FindPlayerName;
+import com.zilker.dto.MatchWithName;
+
+public class PlayerMatchDelegate {
+   
+	public boolean checkValidity(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String player = request.getParameter("player");
+		FindPlayerName findPlayer = new FindPlayerName();
+		FindPlayerMatches findPlayerMatch = new FindPlayerMatches();
+		ArrayList<MatchWithName> matchname = new ArrayList<MatchWithName>();
+		int playerid;
+		if (player.isEmpty()==true) {
+			response.getWriter().append("Field Empty");
+			return false;
+		} else {
+
+			playerid = findPlayer.retrievePlayerID(player);
+
+			if (playerid == -1) {
+				response.getWriter().append("Enter valid Player");
+				return false;
+			} else {
+				matchname = findPlayerMatch.retrieveMatch(playerid);
+				if(matchname.isEmpty()==false) {
+					request.setAttribute("list", matchname);
+					return true;
+				}
+				
+				else {
+					
+					response.getWriter().append("No match");
+					return false;
+				}
+			}
+	}
+	}}

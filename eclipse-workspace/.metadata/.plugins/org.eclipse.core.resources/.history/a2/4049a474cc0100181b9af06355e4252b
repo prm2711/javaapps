@@ -1,0 +1,14 @@
+package com.zilker.delegate;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class InsertTournamentDelegate {
+
+	public boolean checkValidity(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+}

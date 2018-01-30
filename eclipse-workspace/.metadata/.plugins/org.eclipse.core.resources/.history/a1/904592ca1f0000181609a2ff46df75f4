@@ -1,6 +1,0 @@
-@charset "ISO-8859-1";
-body {
-	background: url("https://png.pngtree.com/thumb_back/fw800/back_pic/05/06/83/84597073152f17b.jpg"));
-	background-repeat: no-repeat;
-    background-size: cover;
-}

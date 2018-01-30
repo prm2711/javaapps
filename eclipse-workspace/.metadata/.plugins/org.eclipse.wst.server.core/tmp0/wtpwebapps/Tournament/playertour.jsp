@@ -1,5 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%
+	if (session.getAttribute("name").equals("admin")) {
+%>
+<%@ include file="front.jsp"%>
+<%
+	} else if (session.getAttribute("name").equals("user")) {
+%><%@ include file="front-user.jsp"%>
+<%
+	}
+%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,19 +21,22 @@
 <link rel="stylesheet" type="text/css" href="css/insertpage.css">
 </head>
 <body>
+<h1>${msg }</h1>
 	<form method="post" action="PlayerTournamentServlet"
 		class="insert-form" onsubmit="return validateForm()">
-		<input type="text" name="player" id="player"
-			placeholder="Enter Player Name" /><br> <input type="text"
-			name="tour" id="tour" placeholder="Enter Tournament Name" /><br>
-		<input class="submitButton" type="submit" value="View Results">
-	</form>
+		<select name="player" id="player">
+			<option value="">Player Name</option>
+			<c:forEach var="player" items="${player}">
+				<option value="${player }">${player}</option>
+			</c:forEach>
+		</select> <br> <select name="tour" id="tour">
+			<option value="">Select Tournament Name</option>
+			<c:forEach var="tour" items="${tour}">
+				<option value="${tour }">${tour }</option>
 
-	<form method="post" action="home.jsp" class="button-form-home">
-		<input class="homeButton" type="submit" value="Home">
-	</form>
-	<form method="post" action="LogoutServlet" class="button-form-logout">
-		<input class="logoutButton" type="submit" value="Logout">
+			</c:forEach>
+		</select> <br> <input class="submitButton" type="submit"
+			value="View Results">
 	</form>
 	<script src="js/validateplayertour.js"></script>
 </body>

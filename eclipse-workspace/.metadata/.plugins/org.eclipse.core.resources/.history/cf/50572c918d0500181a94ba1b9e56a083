@@ -1,0 +1,53 @@
+@charset "ISO-8859-1";
+body {
+	background-image: url("https://ak6.picdn.net/shutterstock/videos/8499316/thumb/1.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+h1 {
+	color: #DAA520;
+    font-size: 50px;
+    text-shadow: 2px 2px 3px rgba(255,255,0,0.1);
+}
+
+h2 {
+	color: #DAA520;
+    font-size: 30px;
+    text-shadow: 2px 2px 3px rgba(255,255,0,0.1);
+}
+
+p {
+	color: black;
+	font-size: 30px;
+}
+
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+	box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #43D1AF;
+    opacity: 1;
+}
+
+.submit {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 3%;
+    background: purple;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;   
+    color: #fff;
+    opacity: 0.8;
+    position: absolute;
+    top: 400px;
+}
+
+.submit:hover {
+    background: #8A2BE2;
+    opacity: 1;
+}

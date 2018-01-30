@@ -1,0 +1,25 @@
+package com.zilker.delegate;
+
+import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.zilker.dao.UserValidation;
+
+public class UserValidationDelegate {
+	public String checkValidity(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String user = request.getParameter("username");
+		String password = request.getParameter("password");
+		UserValidation userValidate = new UserValidation();
+		boolean check;
+		check = userValidate.userValidate(user, password);
+		if (check == true && user.equals("admin")) {
+			return "admin";
+		} else if (check == true) {
+			return user;
+		} else {
+			response.getWriter().append("<h1>Invalid</h1>");
+			return "false";
+		}
+	}
+
+}

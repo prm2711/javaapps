@@ -1,0 +1,107 @@
+@charset "ISO-8859-1";
+
+ul {
+	list-style-type: none;
+	height: 50px;
+	background-color: red;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+li {
+	float: left;
+	font-size: 20px;
+	width: 110px;
+}
+
+.home, .logout {
+	width: 75px;
+}
+
+.addmatch,.addplayer {
+	width: 120px;
+}
+
+.addtour,.retrieve {
+	width: 140px;
+}
+
+.twoplayers,.playertour {
+	width: 190px;
+}
+
+.country {
+	width: 250px;
+}
+
+.dropbtn {
+    background-color: red;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: orange;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content form {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.button-add {
+	display: block;
+	border-style: none;
+	color: white;
+	text-decoration: none;
+	border: 0px;
+	background-color: red;
+	font-family: Helvetica;
+	font-size: 18px;
+}
+.dropdown-content form:hover {
+	background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+
+li .form-button, li .form-button-match, li .form-button-home {
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-size: 25px;
+	padding-top: 10px;
+}
+
+li .button-add:hover {
+	background-color: #555;
+	color: white;
+}
+
+li .button-add:active {
+	background-color: blue;
+	color: white;
+}

@@ -1,0 +1,58 @@
+package com.zilker.delegate;
+
+import java.io.IOException;
+import java.util.regex.Pattern;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.zilker.dao.FindCountry;
+import com.zilker.dao.FindPlayerName;
+import com.zilker.dao.FindTournamentName;
+import com.zilker.dao.InsertData;
+import com.zilker.dto.Match;
+import com.zilker.dto.Player;
+
+public class InsertPlayerDelegate {
+
+	public boolean checkValidity(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		String player = request.getParameter("player");
+		String country = request.getParameter("country");
+		int origpoints,newpoints,numbermatch,won,lost,draw;
+		try {
+		origpoints = Integer.parseInt(request.getParameter("origpoints"));
+		newpoints = Integer.parseInt(request.getParameter("newpoints"));
+		numbermatch = Integer.parseInt(request.getParameter("numbermatch"));
+		won = Integer.parseInt(request.getParameter("won"));
+		lost = Integer.parseInt(request.getParameter("lost"));
+		draw = Integer.parseInt(request.getParameter("draw"));
+		}
+		catch(NumberFormatException e) {
+			
+		}
+		Player play=new Player("","",0,0,0,0,0,0);
+		InsertData insertData = new InsertData();
+		// check valid
+		boolean validPlayer = Pattern.compile("([\\w\\s]+)").matcher(player).matches();
+		boolean validCountry = Pattern.compile("([\\w\\s]+)").matcher(country).matches();
+		// set data
+		if (validPlayer == true && validCountry == true) {
+			play.setPlayerName(player);
+			play.setCountry(country);
+			play.setOrig(origpoints);
+			play.setNew(newpoints);
+			play.setNumber(numbermatch);
+			play.setWon(won);
+			play.setLost(lost);
+			play.setDraw(draw);
+			insertData.insertPlayer(play);
+			response.getWriter().append("Data inserted Successfully");
+			return true;
+		} else {
+			response.getWriter().append("Enter valid data");
+			return false;
+		}
+
+	}
+
+}

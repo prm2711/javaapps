@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	if (session.getAttribute("name").equals("admin")) {
+%>
+<%@ include file="front.jsp"%>
+<%
+	} else if (session.getAttribute("name").equals("user")) {
+%><%@ include file="front-user.jsp"%>
+<%
+	}
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Player in a Tournament</title>
+<link rel="stylesheet" type="text/css" href="<c:url value = "/css/styles.css"/>">
+<link rel="stylesheet" type="text/css" href="<c:url value = "/css/button-style.css"/>">
+<link rel="stylesheet" type="text/css" href="<c:url value = "/css/insertpage.css"/>">
+</head>
+<body>
+<h1>${msg }</h1>
+	<form method="post" action="<c:url value = "/PlayerTournamentServlet"/>"
+		class="insert-form" onsubmit="return validateForm()">
+		<select name="player" id="player">
+			<option value="">Player Name</option>
+			<c:forEach var="player" items="${player}">
+				<option value="${player }">${player}</option>
+			</c:forEach>
+		</select> <br> <select name="tour" id="tour">
+			<option value="">Select Tournament Name</option>
+			<c:forEach var="tour" items="${tour}">
+				<option value="${tour }">${tour }</option>
+
+			</c:forEach>
+		</select> <br> <input class="submitButton" type="submit"
+			value="View Results">
+	</form>
+	<script src="<c:url value = "/js/validateplayertour.js"/>"></script>
+</body>
+</html>

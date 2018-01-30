@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+body {
+	background-image: url("https://ak6.picdn.net/shutterstock/videos/8499316/thumb/1.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+	color: #DAA520;
+    font-size: 50px;
+    text-shadow: 2px 2px 3px rgba(255,255,0,0.1);
+}
+
+h2 {
+	color: #DAA520;
+    font-size: 40px;
+    text-shadow: 2px 2px 3px rgba(255,255,0,0.1);
+}

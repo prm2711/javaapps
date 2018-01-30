@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="Tournament" path="/Tournament" reloadable="true" source="org.eclipse.jst.jee.server:Tournament"/><Context docBase="Spring3MVC" path="/Spring3MVC" reloadable="true" source="org.eclipse.jst.jee.server:Spring3MVC"/><Context docBase="FirstProject" path="/FirstProject" reloadable="true" source="org.eclipse.jst.jee.server:FirstProject"/></Host>
+      <Context docBase="Tournament" path="/Tournament" reloadable="true" source="org.eclipse.jst.jee.server:Tournament"/><Context docBase="Spring3MVC" path="/Spring3MVC" reloadable="true" source="org.eclipse.jst.jee.server:Spring3MVC"/><Context docBase="FirstProject" path="/FirstProject" reloadable="true" source="org.eclipse.jst.jee.server:FirstProject"/><Context docBase="ResponsiveApp" path="/ResponsiveApp" reloadable="true" source="org.eclipse.jst.jee.server:ResponsiveApp"/><Context docBase="RSSFeedProject" path="/RSSFeedProject" reloadable="true" source="org.eclipse.jst.jee.server:RSSFeedProject"/><Context docBase="TournamentPortal" path="/TournamentPortal" reloadable="true" source="org.eclipse.jst.jee.server:TournamentPortal"/></Host>
     </Engine>
   </Service>
 </Server>

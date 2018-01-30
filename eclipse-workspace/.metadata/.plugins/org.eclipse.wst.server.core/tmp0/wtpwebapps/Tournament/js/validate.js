@@ -12,10 +12,3 @@ function validateForm() {
 		return true;
 	}
 }
-
-function blink() {
-	var anim = document.getElementById('para');
-	setInterval(function() {
-		anim.style.display = (anim.style.display == 'none' ? '' : 'none');
-	}, 1000);
-}

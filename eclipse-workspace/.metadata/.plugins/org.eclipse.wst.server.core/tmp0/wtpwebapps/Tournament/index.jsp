@@ -5,38 +5,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="css/styles.css">
-<title>Tournament Management</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>E-Tournica</title>
+<link rel="stylesheet" type="text/css" href="css/welcome.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
-<body onload="blink();">
+<body>
+	<h1>
+		<img
+			src="https://livedemo00.template-help.com/wt_50776/images/logo.png"
+			alt="logo" class="logo-img"> @ E-Tournica
+	</h1>
+	<h2>
+		<i>Your stop for badminton updates</i>
+	</h2>
+	<div class="login-card">
+		<center>
+			<h5>${msg }</h5>
+		</center>
+		<h1>
+			<b>Log-in</b>
+		</h1>
+		<br>
+		<form method="post" action="UserValidationServlet"
+			onsubmit="return validateForm()">
 
-	<div class="left-div">
-
-		<h1>E-Tournica: A Badminton Tournament Portal</h1>
-		<h2>
-			<i>Your stop for badminton updates</i>
-		</h2>
-		<p id="para">
-			<b> Missed a match? Don't worry! You can catch updates of Asian
-				Open, Australian Open and French Open on E-Tournica!!</b>
-
-
-		</p>
-
-	</div>
-	<div class="right-div">
-		<div class="admin-form">
-			<h1>Login</h1>
-			<form method="post" action="UserValidationServlet"
-				onsubmit="return validateForm()">
-				<input type="text" name="username" id="username"
-					placeholder="User Name" class="user" /><br> <input
-					type="password" name="password" id="password"
-					placeholder="Password" class="pass" /><br> <input
-					type="submit" value="Login" class="submit" />
-			</form>
-		</div>
+			<input type="text" name="username" placeholder="Username"
+				id="username"> <input type="password" name="password"
+				placeholder="Password" id="password"> <input type="submit"
+				name="login" class="login login-submit" value="Login">
+		</form>
 	</div>
 	<script src="js/validate.js"></script>
+
 </body>
 </html>

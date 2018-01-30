@@ -1,0 +1,28 @@
+$(document).ready(function() {}
+    var totalRows = $('#tblData').find('tbody tr:has(td)').length;
+    var recordPerPage = 5;
+    var totalPages = Math.ceil(totalRows / recordPerPage);Â 
+    var $pages = $('<div id="pages"></div>');Â 
+    for (i = 0; i & lt; totalPages; i++) {Â Â 
+        $('<span>&nbsp;' + (i + 1) + '</span>').appendTo($pages);Â 
+    }Â Â Â 
+    $pages.appendTo('#tblData');Â 
+    $('.pageNumber').hover(Â Â function() {
+        $(this).addClass('focus');
+    }, Â Â function() {
+        $(this).removeClass('focus');
+    }Â );Â 
+    $('table').find('tbody tr:has(td)').hide();Â 
+    var tr = $('table tbody tr:has(td)');Â 
+    for (var i = 0; i & lt; = recordPerPage - 1; i++) {Â Â Â 
+        $(tr[i]).show();Â 
+    }Â 
+    $('span').click(function(event) {Â Â 
+        $('#tblData').find('tbody tr:has(td)').hide();Â Â 
+        var nBegin = ($(this).text() - 1) * recordPerPage;Â Â 
+        var nEnd = $(this).text() * recordPerPage - 1;Â Â 
+        for (var i = nBegin; i & lt; = nEnd; i++)Â Â  {Â Â Â 
+            $(tr[i]).show();Â Â 
+        }Â 
+    });
+});

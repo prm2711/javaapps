@@ -1,0 +1,61 @@
+@charset "ISO-8859-1";
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    background-color: red;
+}
+
+li {
+    float: left;
+    font-size: 20px;
+    width: 110px;
+    margin-left: 3px;
+}
+
+.home,.logout {
+	width: 75px;
+}
+
+.match {
+	width: 170px;
+}
+
+li .form-button,li .form-button-match,li .form-button-home {
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    width: 100px;
+    padding: 10px 0px;
+}
+
+li .form-button-home {
+	width: 50px;
+}
+
+li .form-button-match {
+	width: 140px;
+}
+
+.button-add {
+
+	display: block;
+	border-style: none;
+	color: white;
+    text-decoration: none;
+    border: 0px;
+    background-color: red;
+}
+
+
+li .button-add:hover {
+    background-color: #555;
+    color: white;
+}
+
+li .button-add:active {
+    background-color: blue;
+    color: white;
+}

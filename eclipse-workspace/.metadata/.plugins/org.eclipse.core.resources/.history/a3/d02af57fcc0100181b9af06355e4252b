@@ -1,0 +1,36 @@
+package com.zilker.delegate;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.zilker.dao.FindCountry;
+import com.zilker.dao.FindPlayerName;
+import com.zilker.dao.FindTournamentName;
+import com.zilker.dao.InsertData;
+import com.zilker.dto.Match;
+import com.zilker.dto.Tour;
+
+public class InsertTournamentDelegate {
+
+	public boolean checkValidity(HttpServletRequest request, HttpServletResponse response) {
+		
+		String tourname = request.getParameter("tourname");
+		Tour tour = new Tour();
+		InsertData insertData = new InsertData();
+	    
+			match.setTourId(tour);
+			match.setPlay1Id(play1);
+			match.setPlay2Id(play2);
+			match.setWinner(win);
+			match.setLoser(lose);
+			match.setStatus(status);
+			match.setScore(score);
+			insertData.insertMatch(match);
+			response.getWriter().append("Data inserted Successfully");
+			return true;
+		}
+
+	}
+
+	
+}

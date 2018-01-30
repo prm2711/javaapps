@@ -1,0 +1,100 @@
+@charset "ISO-8859-1";
+body {
+	background-image: url("https://ak6.picdn.net/shutterstock/videos/8499316/thumb/1.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+h1 {
+	color: #DAA520;
+    font-size: 50px;
+    text-shadow: 2px 2px 3px rgba(255,255,0,0.1);
+}
+
+h2 {
+	color: #DAA520;
+    font-size: 30px;
+    text-shadow: 2px 2px 3px rgba(255,255,0,0.1);
+}
+
+p {
+	color: black;
+	font-size: 30px;
+}
+
+.admin-form {
+    font: 95% Arial, Helvetica, sans-serif;
+    width: 50%;
+    height: 350px;
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #000080;
+    border-width:thick;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjdAFkwK0Ag4t-R4j_HPDkGZ2mEnB2iMXH60EItnfem7ZoYICC4w");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 0px;
+    opacity: 0.8;
+}
+
+.admin-form h1 {
+    background: #000080;
+    padding: 20px 0;
+    font-size: 140%;
+    font-weight: 300;
+    text-align: center;
+    color: white;
+    margin: -16px -16px 16px -16px;
+}
+
+.user,.pass {
+    outline: none;
+    box-sizing: border-box;
+    width: 90%;
+    background: white;
+    margin-bottom: 4%;
+    border: 1px solid #ccc;
+    padding: 3%;
+    color: #555;
+    font: 95% Arial, Helvetica, sans-serif;
+    opacity: 0.8;   
+    position: absolute; 
+}
+
+.user {
+	top: 150px;
+}
+
+.pass {
+	top: 250px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+	box-shadow: 0 0 5px #43D1AF;
+    padding: 3%;
+    border: 1px solid #43D1AF;
+    opacity: 1;
+}
+
+.submit {
+    box-sizing: border-box;
+    width: 90%;
+    padding: 3%;
+    background: purple;
+    border-bottom: 2px solid #30C29E;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;   
+    color: #fff;
+    opacity: 0.8;
+    position: absolute;
+    top: 400px;
+}
+
+.submit:hover {
+    background: #8A2BE2;
+    opacity: 1;
+}

@@ -1,0 +1,88 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="com.zilker.properties.ReadFromPropertiesFile"%>
+<%@ page import="java.util.*"%>
+<%@ include file="front.jsp"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+<link rel="stylesheet" type="text/css" href="css/button-style.css">
+<link rel="stylesheet" type="text/css" href="css/home.css">
+<title>Home</title>
+</head>
+<body onload="blink();">
+	<center>
+		<h1>
+			Welcome to E-Tournica <img class="shuttle"
+				src="https://cdn1.iconfinder.com/data/icons/video-game-solid-2/48/82-512.png"
+				alt="shuttle">
+		</h1>
+	</center>
+	<h2>
+		Welcome
+		<%
+		out.println(ReadFromPropertiesFile.getProperties("admin"));
+	%>
+	</h2>
+	<div class="updates">
+	<img src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2014/11/1415490092badge.png" alt="rank" class="rank-img">
+	</div>
+	<h1>${msg }</h1>
+	<p class="heading1">Top 5 Players</p>
+    <table>
+		<tr>
+			<th>Rank</th>
+			<th>Player Name</th>
+		</tr>
+		<% int count=0; %>
+		<c:forEach var="p"  begin="0" end="4" items="${play}">
+			<tr>
+				<td><% count++; %></td>
+				<td>${p.getPlayerName()}</td>
+			</tr>
+			
+		</c:forEach>
+	</table>
+	<div class="event-list">
+		<p class="heading">Tournaments</p>
+		<div class="events">
+			<img
+				src="https://livedemo00.template-help.com/wt_50776/images/home_img.jpg"
+				alt="shuttle" class="event-img"> <br>
+			<p class="text">London Open</p>
+		</div>
+		<div class="events">
+			<img
+				src="https://livedemo00.template-help.com/wt_50776/images/home_img1.jpg"
+				alt="shuttle" class="event-img"> <br>
+			<p class="text">Asian Open</p>
+		</div>
+		<div class="events">
+			<img
+				src="https://livedemo00.template-help.com/wt_50776/images/home_img2.jpg"
+				alt="shuttle" class="event-img"> <br>
+			<p class="text">US Open</p>
+		</div>
+		<p class="text-more">And More...</p>
+	</div>
+
+	<%
+		/*
+				Locale aLocale = new Locale("en", "US");
+				Locale frLocale = new Locale("fr", "FR");
+				Locale dLocale =Locale.getDefault();
+				ResourceBundle messages = ResourceBundle.getBundle("MessagesBundle", dLocale);
+				out.println("<h2>" + messages.getString("greetings") + " from  " + dLocale.getDisplayCountry() + 
+						"</h2>");*/
+	%>
+	<fmt:setBundle basename="com.zilker.properties.MessagesBundle"
+		var="lang" />
+	<fmt:message key="greetings" bundle="${lang}" />
+	<br />
+	<script src="js/home.js"></script>
+</body>
+</html>
