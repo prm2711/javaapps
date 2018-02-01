@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.zilker.bean.Player;
 import com.zilker.dao.RetrieveData;
-import com.zilker.dto.Player;
 
 /**
  * Servlet implementation class RetrievePlayerServlet
@@ -34,6 +34,14 @@ public class RetrievePlayerServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		PrintWriter out=response.getWriter();
+		RetrieveData retrieveData=new RetrieveData();
+		ArrayList<Player> play = new ArrayList<Player>();
+		RequestDispatcher rd;
+		play=retrieveData.retrievePlayer();
+		rd = request.getRequestDispatcher("/jsp/retrieveplayer.jsp");
+		request.getSession().setAttribute("play",play);
+		rd.forward(request, response);
 	}
 
 	/**
@@ -41,14 +49,7 @@ public class RetrievePlayerServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter out=response.getWriter();
-		RetrieveData retrieveData=new RetrieveData();
-		ArrayList<Player> play = new ArrayList<Player>();
-		RequestDispatcher rd;
-		play=retrieveData.retrievePlayer();
-		rd = request.getRequestDispatcher("/jsp/retrieveplayer.jsp");
-		request.setAttribute("play",play);
-		rd.forward(request, response);
+		
 	}
 
 }

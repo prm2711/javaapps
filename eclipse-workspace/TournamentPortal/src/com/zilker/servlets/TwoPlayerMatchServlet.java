@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zilker.dao.FindPlayerMatches;
-import com.zilker.dao.FindPlayerName;
+import com.zilker.bean.Match;
+import com.zilker.bean.MatchWithName;
+import com.zilker.dao.FindPlayer;
 import com.zilker.delegate.TwoPlayerMatchDelegate;
-import com.zilker.dto.Match;
-import com.zilker.dto.MatchWithName;
 
 /**
  * Servlet implementation class TwoPlayerMatchServlet

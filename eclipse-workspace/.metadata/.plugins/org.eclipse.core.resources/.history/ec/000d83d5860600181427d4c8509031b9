@@ -1,0 +1,22 @@
+package com.zilker.factory;
+
+import com.zilker.dto.MatchWithName;
+
+public class RetrieveMatchesFactory {
+	 public MatchWithName getType(String matchType){
+	      if(matchType == null){
+	         return null;
+	      }		
+	      if(matchType.equalsIgnoreCase("CIRCLE")){
+	         return new Circle();
+	         
+	      } else if(matchType.equalsIgnoreCase("RECTANGLE")){
+	         return new Rectangle();
+	         
+	      } else if(matchType.equalsIgnoreCase("SQUARE")){
+	         return new Square();
+	      }
+	      
+	      return null;
+	   }
+}

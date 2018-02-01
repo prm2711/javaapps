@@ -1,19 +1,17 @@
 package com.zilker.dao;
 
+import com.zilker.bean.*;
 import com.zilker.constant.Constants;
-import com.zilker.dto.*;
-import com.zilker.exceptions.MyException;
 import com.zilker.preparedstatement.ExecuteStatement;
 import com.zilker.utilities.*;
 
 import java.sql.*;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class InsertData {
 	private Logger logger = Logger.getLogger(InsertData.class.getName());
-	
+
+	// Add a Match
 	public void insertMatch(Match match1) {
 
 		ConnectionSetup conn = new ConnectionSetup();
@@ -42,6 +40,7 @@ public class InsertData {
 			} else if (status.equals("Suspended")) {
 				execute.updateDraw(connection, p1id, p2id);
 			}
+			// Updating number of matches
 			prepmatch = connection.prepareStatement(Constants.UPDATEMATCH);
 			prepmatch.setInt(1, p1id);
 			prepmatch.executeUpdate();
@@ -62,17 +61,18 @@ public class InsertData {
 
 	}
 
+	// Add a Tournament
 	public void insertTour(Tour tour) {
 		ConnectionSetup conn = new ConnectionSetup();
 		Connection connection = null;
 		ExecuteStatement execute = new ExecuteStatement();
 		connection = conn.getConnection();
 		Statement statement = null;
-		String tourname=tour.getTourName();
+		String tourname = tour.getTourName();
 		try {
 			// Execute a query
 			statement = connection.createStatement();
-			execute.insertTour(connection,tourname);
+			execute.insertTour(connection, tourname);
 		} catch (SQLException se) {
 			// Handle errors for JDBC
 			logger.info("Problem in insertion");
@@ -82,9 +82,9 @@ public class InsertData {
 			conn.closeConnection(connection);
 		}
 
-		
 	}
 
+	// Add a Player
 	public void insertPlayer(Player play) {
 		ConnectionSetup conn = new ConnectionSetup();
 		Connection connection = null;
@@ -92,18 +92,17 @@ public class InsertData {
 		connection = conn.getConnection();
 
 		Statement statement = null;
-		String player=play.getPlayerName();
-		String country=play.getCountry();
-		int origpoints=play.getOrig(),newpoints=play.getNew();
-		int numbermatch=play.getNumber(),won=play.getWon();
-		int lost=play.getLost(),draw=play.getDraw();
+		String player = play.getPlayerName();
+		String country = play.getCountry();
+		int origpoints = play.getOrig(), newpoints = play.getNew();
+		int numbermatch = play.getNumber(), won = play.getWon();
+		int lost = play.getLost(), draw = play.getDraw();
 		try {
 
 			// Execute a query
 			statement = connection.createStatement();
 
-			execute.insertPlayer(connection, player,country,origpoints,newpoints,numbermatch,won,lost,draw);
-
+			execute.insertPlayer(connection, player, country, origpoints, newpoints, numbermatch, won, lost, draw);
 
 		} catch (SQLException se) {
 			// Handle errors for JDBC
@@ -113,6 +112,6 @@ public class InsertData {
 			conn.closeStatement(statement);
 			conn.closeConnection(connection);
 		}
-		
+
 	}
 }

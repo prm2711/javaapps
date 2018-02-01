@@ -7,9 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zilker.dao.FindPlayerMatches;
-import com.zilker.dao.FindPlayerName;
-import com.zilker.dao.FindTournamentName;
-import com.zilker.dto.MatchWithName;
+import com.zilker.bean.MatchWithName;
+import com.zilker.dao.FindPlayer;
+import com.zilker.dao.FindTournament;
+import com.zilker.dao.FindTwoPlayersMatches;
 
 public class TwoPlayerMatchDelegate {
 	public boolean checkValidity(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -18,10 +19,10 @@ public class TwoPlayerMatchDelegate {
 		int player1id, player2id, tourid;
 		String player2 = request.getParameter("player2");
 		String tour = request.getParameter("tour");
-		FindPlayerMatches findPlayerMatch = new FindPlayerMatches();
-		FindPlayerName findPlayer = new FindPlayerName();
+		FindTwoPlayersMatches findPlayerMatch = new FindTwoPlayersMatches();
+		FindPlayer findPlayer = new FindPlayer();
 		ArrayList<MatchWithName> matchname = new ArrayList<MatchWithName>();
-		FindTournamentName findTour = new FindTournamentName();
+		FindTournament findTour = new FindTournament();
 		tourid = findTour.retrieveTournamentID(tour);
 		player1id = findPlayer.retrievePlayerID(player1);
 		player2id = findPlayer.retrievePlayerID(player2);
@@ -32,7 +33,7 @@ public class TwoPlayerMatchDelegate {
 			request.setAttribute("msg", "Enter valid Tournament");
 			return false;
 		} else {
-			matchname = findPlayerMatch.retrieveResult(player1id, player2id,tourid);
+			matchname = findPlayerMatch.retrieveMatch(player1id, player2id,tourid);
 			if (matchname.isEmpty() == false) {
 				request.setAttribute("list", matchname);
 				return true;

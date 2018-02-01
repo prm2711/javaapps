@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zilker.dao.FindPlayerMatches;
-import com.zilker.dao.FindPlayerName;
-import com.zilker.dao.FindTournamentName;
-import com.zilker.dto.MatchWithName;
+import com.zilker.bean.MatchWithName;
+import com.zilker.dao.FindPlayer;
+import com.zilker.dao.FindTournament;
 
 public class PlayerTournamentDelegate {
      
@@ -18,9 +18,9 @@ public class PlayerTournamentDelegate {
 		String player = request.getParameter("player");
 		int playerid, tourid;
 		String tour = request.getParameter("tour");
-		FindPlayerName findPlayer = new FindPlayerName();
+		FindPlayer findPlayer = new FindPlayer();
 		FindPlayerMatches findPlayerMatch = new FindPlayerMatches();
-		FindTournamentName findTour = new FindTournamentName();
+		FindTournament findTour = new FindTournament();
 		ArrayList<MatchWithName> matches = new ArrayList<MatchWithName>();
 	
 			playerid = findPlayer.retrievePlayerID(player);
@@ -32,7 +32,7 @@ public class PlayerTournamentDelegate {
 				request.setAttribute("msg", "Enter valid Tournament");
 				return false;
 			} else {
-				matches = findPlayerMatch.retrieveTournament(playerid, tourid);
+				matches = findPlayerMatch.retrieveMatch(playerid, tourid);
 				if (matches.isEmpty() == false) {
 					request.setAttribute("list", matches);
 					return true;

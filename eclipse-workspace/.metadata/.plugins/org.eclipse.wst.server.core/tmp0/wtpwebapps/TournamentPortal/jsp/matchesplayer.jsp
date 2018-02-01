@@ -8,6 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Player Matches List</title>
 <link rel="stylesheet" type="text/css" href="<c:url value = "/css/styles.css"/>">
 <link rel="stylesheet" type="text/css" href="<c:url value = "/css/button-style.css"/>">
@@ -15,15 +16,17 @@
 <link
 	href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"
 	rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value = "/css/media-query.css"/>">
 </head>
 <body>
 <%
 	if (session.getAttribute("name").equals("admin")) {
 %>
-<%@ include file="front.jsp"%>
+<%@ include file="nav.jsp"%>
 <%
 	} else if (session.getAttribute("name").equals("user")) {
-%><%@ include file="front-user.jsp"%>
+%><%@ include file="navuser.jsp"%>
 <%
 	}
 %>

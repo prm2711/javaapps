@@ -1,0 +1,91 @@
+@charset "ISO-8859-1";
+
+body {
+	position: relative;
+	background-image:
+		url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO0wTB7wL4cLPff4nb2nf-9jl6zbM9AVS3tAGTsjUg07ZUmfEx");
+	height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin: 0px;
+}
+
+.insert-data {
+	padding: 0px;
+	width: 100%;
+	margin: 0 auto;
+	border-radius: 2px;
+	overflow: hidden;
+	position: relative;
+}
+
+.insert-form {
+	font-family: 'Open Sans Condensed', arial, sans;
+	top: 100px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	opacity: 0.8;
+}
+
+.insert-form h2 {
+	background: #4D4D4D;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: white;
+	font-size: 18px;
+	font-weight: 100;
+	padding: 20px;
+	margin: -30px -30px 30px -30px;
+}
+
+input, input[type="text"], .insert-form select {
+	box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+
+.submitButton {
+	box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	background-color: #2CBBBB;
+	border: 1px solid #27A0A0;
+	display: block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0 auto;
+}
+
+.submitButton:hover {
+	background: linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+	background-color: #34CACA;
+}
+
+.ui-autocomplete-input {
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+	/* add padding for vertical scrollbar */
+	padding-right: 5px;
+	writing-mode: vertical-lr;
+}
+
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+}

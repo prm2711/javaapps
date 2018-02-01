@@ -11,9 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.JSONArray;
+
+import com.zilker.bean.MatchWithName;
 import com.zilker.dao.ListPlayerTournament;
 import com.zilker.dao.RetrieveData;
-import com.zilker.dto.MatchWithName;
 
 /**
  * Servlet implementation class ListServlet
@@ -37,6 +39,28 @@ public class ListServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		ListPlayerTournament list = new ListPlayerTournament();
+		ArrayList<String> player = new ArrayList<String>();
+		ArrayList<String> tour = new ArrayList<String>();
+		HttpSession session=request.getSession();
+		RequestDispatcher rd = null;
+		String link = request.getParameter("link");
+		player = list.retrievePlayerList();
+		tour = list.retrieveTourList();
+		JSONArray jsonPlayer=new JSONArray(player);
+		JSONArray jsonTour=new JSONArray(tour);
+		session.setAttribute("player", jsonPlayer);
+		session.setAttribute("tour",jsonTour);
+		if (link.equals("Match")) {
+			rd = request.getRequestDispatcher("/jsp/insertmatch.jsp");
+			rd.forward(request, response);
+		} else if (link.equals("PlayervsPlayer")) {
+			rd = request.getRequestDispatcher("/jsp/twoplayermatch.jsp");
+			rd.forward(request, response);
+		} else if (link.equals("PlayerinTournament")) {
+			rd = request.getRequestDispatcher("/jsp/playertour.jsp");
+			rd.forward(request, response);
+		}
 	}
 
 	/**
@@ -47,27 +71,7 @@ public class ListServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
-		ListPlayerTournament list = new ListPlayerTournament();
-		ArrayList<String> player = new ArrayList<String>();
-		ArrayList<String> tour = new ArrayList<String>();
-		HttpSession session=request.getSession();
-		RequestDispatcher rd = null;
-		String link = request.getParameter("link");
-		player = list.retrievePlayerList();
-		tour = list.retrieveTourList();
-		session.setAttribute("player", player);
-		session.setAttribute("tour", tour);
-		if (link.equals("Match")) {
-			rd = request.getRequestDispatcher("/jsp/insertmatch.jsp");
-			rd.forward(request, response);
-		} else if (link.equals("Player vs Player")) {
-			rd = request.getRequestDispatcher("/jsp/twoplayermatch.jsp");
-			rd.forward(request, response);
-		} else if (link.equals("Player in Tournament")) {
-			rd = request.getRequestDispatcher("/jsp/playertour.jsp");
-			rd.forward(request, response);
-		}
-
+		
 	}
 
 }

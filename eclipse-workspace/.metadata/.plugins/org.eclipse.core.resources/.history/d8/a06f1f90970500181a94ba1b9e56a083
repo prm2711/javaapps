@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@media screen (min-width: 576px) {
+	.col-xs-1 {
+		width: 8.33%;
+	}
+	.col-xs-2 {
+		width: 16.66%;
+	}
+	.col-xs-3 {
+		width: 25%;
+	}
+	.col-xs-4 {
+		width: 33.33%;
+	}
+	.col-xs-5 {
+		width: 41.66%;
+	}
+	.col-xs-6 {
+		width: 8.33%;
+	}
+	.col-xs-7 {
+		width: 8.33%;
+	}
+	.col-xs-8 {
+		width: 8.33%;
+	}
+	.col-xs-9 {
+		width: 8.33%;
+	}
+	.col-xs-10 {
+		width: 8.33%;
+	}
+	.col-xs-11 {
+		width: 8.33%;
+	}
+	.col-xs-12 {
+		width: 8.33%;
+	}
+}
+
+@media screen (min-width: 768px) {
+	
+}
+
+@media screen (min-width: 992px) {
+	
+}
+
+@media screen (min-width: 1200px) {
+	
+}

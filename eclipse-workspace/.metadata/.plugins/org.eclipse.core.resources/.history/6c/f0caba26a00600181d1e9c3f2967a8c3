@@ -1,0 +1,16 @@
+package com.zilker.delegate;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.zilker.factory.RetrieveMatchesFactory;
+import com.zilker.interfaces.RetrieveMatchesInterface;
+
+public class RetrieveMatchesFactoryDelegate {
+ 
+	public void checkType(HttpServletRequest request, HttpServletResponse response) {
+		RetrieveMatchesFactory factory = new RetrieveMatchesFactory();
+		RetrieveMatchesInterface interfaceMatch = factory.getType(request.getParameter("type"));
+	
+	}
+}

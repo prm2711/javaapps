@@ -1,0 +1,24 @@
+package com.zilker.factory;
+
+import com.zilker.dao.FindPlayerMatches;
+import com.zilker.dao.FindTwoPlayersMatches;
+import com.zilker.dao.RetrieveAllMatches;
+import com.zilker.interfaces.RetrieveMatchesInterface;
+
+public class RetrieveMatchesFactory {
+	 public RetrieveMatchesInterface getType(String userType){
+	      if(userType == null){
+	         return null;
+	      }		
+	      else if(userType.equals("All Matches")) {
+	    	  return new RetrieveAllMatches();
+	      }
+	      else if(userType.equals("Player vs Player")) {
+	    	  return new FindTwoPlayersMatches();
+	      }
+	      else if(userType.equals("Player in Tournament")) {
+	    	  return new FindPlayerMatches();
+	      }
+	      return null;
+	   }
+}

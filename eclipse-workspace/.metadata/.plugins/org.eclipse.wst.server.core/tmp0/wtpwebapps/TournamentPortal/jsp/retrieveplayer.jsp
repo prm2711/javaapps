@@ -4,10 +4,10 @@
 <%
 	if (session.getAttribute("name").equals("admin")) {
 %>
-<%@ include file="front.jsp"%>
+<%@ include file="nav.jsp"%>
 <%
 	} else if (session.getAttribute("name").equals("user")) {
-%><%@ include file="front-user.jsp"%>
+%><%@ include file="navuser.jsp"%>
 <%
 	}
 %>
@@ -15,10 +15,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Players List</title>
-<link rel="stylesheet" type="text/css" href="<c:url value = "/css/styles.css"/>">
-<link rel="stylesheet" type="text/css" href="<c:url value = "/css/button-style.css"/>">
-<link rel="stylesheet" type="text/css" href="<c:url value = "/css/display.css"/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value = "/css/styles.css"/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value = "/css/button-style.css"/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value = "/css/display.css"/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value = "/css/media-query.css"/>">
 <link
 	href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"
 	rel="stylesheet" type="text/css">
@@ -27,30 +33,31 @@
 	<%@ page import="com.zilker.dto.*"%>
 	<%@ page import="java.util.ArrayList"%>
 	<table id="example" class="display">
-	<thead>
-		<tr>
-			<th>Player Name</th>
-			<th>Country</th>
-			<th>Original Points</th>
-			<th>New Points</th>
-			<th>Number of Matches</th>
-			<th>Won</th>
-			<th>Lost</th>
-			<th>Draw</th>
-		</tr></thead>
-		<tbody>
-		<c:forEach var="p" items="${play}">
+		<thead>
 			<tr>
-				<td>${p.getPlayerName()}</td>
-				<td>${p.getCountry()}</td>
-				<td>${p.getOrig()}</td>
-				<td>${p.getNew()}</td>
-				<td>${p.getNumber()}</td>
-				<td>${p.getWon()}</td>
-				<td>${p.getLost()}</td>
-				<td>${p.getDraw()}</td>
+				<th>Player Name</th>
+				<th>Country</th>
+				<th>Original Points</th>
+				<th>New Points</th>
+				<th>Number of Matches</th>
+				<th>Won</th>
+				<th>Lost</th>
+				<th>Draw</th>
 			</tr>
-		</c:forEach>
+		</thead>
+		<tbody>
+			<c:forEach var="p" items="${play}">
+				<tr>
+					<td>${p.getPlayerName()}</td>
+					<td>${p.getCountry()}</td>
+					<td>${p.getOrig()}</td>
+					<td>${p.getNew()}</td>
+					<td>${p.getNumber()}</td>
+					<td>${p.getWon()}</td>
+					<td>${p.getLost()}</td>
+					<td>${p.getDraw()}</td>
+				</tr>
+			</c:forEach>
 		</tbody>
 	</table>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -58,7 +65,9 @@
 		src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			$('#example').DataTable();
+			$('#example').DataTable({
+				"order" : [ 3, 'desc' ]
+			});
 		});
 	</script>
 </body>

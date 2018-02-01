@@ -8,14 +8,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
+import com.zilker.bean.MatchWithName;
+import com.zilker.bean.Player;
 import com.zilker.constant.Constants;
-import com.zilker.dto.MatchWithName;
-import com.zilker.dto.Player;
 import com.zilker.utilities.ConnectionSetup;
 
 public class ListPlayerTournament {
-	private Logger logger = Logger.getLogger(RetrieveData.class.getName());
-
+	private Logger logger = Logger.getLogger(ListPlayerTournament.class.getName());
+//List of players
 	public ArrayList<String> retrievePlayerList() {
 		Connection connection = null;
 		ConnectionSetup conn = new ConnectionSetup();
@@ -53,10 +53,7 @@ public class ListPlayerTournament {
 		}
 		return play;
 	}
-
-	
-
-
+//List of Tournaments
 	public ArrayList<String> retrieveTourList() {
 		Connection connection = null;
 		ConnectionSetup conn = new ConnectionSetup();

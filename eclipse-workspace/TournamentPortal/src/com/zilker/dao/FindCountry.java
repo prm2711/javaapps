@@ -11,8 +11,9 @@ import com.zilker.constant.Constants;
 import com.zilker.utilities.ConnectionSetup;
 
 public class FindCountry {
-	private Logger logger = Logger.getLogger(FindPlayerName.class.getName());
+	private Logger logger = Logger.getLogger(FindPlayer.class.getName());
 
+	// Find Country of player
 	public String retrieveCountry(int playerid) {
 		Connection connection = null;
 		ConnectionSetup conn = new ConnectionSetup();
@@ -52,6 +53,7 @@ public class FindCountry {
 		}
 		return country;
 	}
+//Check if country is in the list
 	public boolean checkCountry(String countryname) {
 		Connection connection = null;
 		ConnectionSetup conn = new ConnectionSetup();
@@ -73,7 +75,7 @@ public class FindCountry {
 			while (result.next()) {
 
 				country = result.getString(1);
-				if(country.equals(countryname))
+				if (country.equals(countryname))
 					return true;
 
 			}
@@ -90,7 +92,7 @@ public class FindCountry {
 		}
 		return false;
 	}
-
+//Comparing country
 	public boolean compareCountry(String country1, String country2) {
 		// TODO Auto-generated method stub
 		if (country1.equals(country2))

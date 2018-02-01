@@ -10,9 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.zilker.dao.SortData;
+import com.zilker.bean.Player;
 import com.zilker.delegate.PlayerCountryDelegate;
-import com.zilker.dto.Player;
 
 /**
  * Servlet implementation class ViewCountryServlet

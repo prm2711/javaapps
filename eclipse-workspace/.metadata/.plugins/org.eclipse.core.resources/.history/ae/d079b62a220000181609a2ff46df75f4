@@ -1,6 +1,0 @@
-@charset "ISO-8859-1";
-body {
-	background-image: url("https://www.cssc.co.uk/CSSC/cache/file/5F76E079-155D-1269-0F1039CE7D768DC8.jpg");
-	background-repeat: no-repeat;
-    background-size: cover;
-}

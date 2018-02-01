@@ -1,0 +1,5 @@
+package com.zilker.interfaces;
+
+public interface RetrieveMatchesInterface {
+void retrieveMatch(int p1id,int p2id ,int tourid);
+}

@@ -10,12 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.zilker.bean.Match;
 import com.zilker.dao.FindCountry;
-import com.zilker.dao.FindPlayerName;
-import com.zilker.dao.FindTournamentName;
+import com.zilker.dao.FindPlayer;
+import com.zilker.dao.FindTournament;
 import com.zilker.dao.InsertData;
 import com.zilker.delegate.InsertDataDelegate;
-import com.zilker.dto.Match;
 
 /**
  * Servlet implementation class InsertMatchServlet

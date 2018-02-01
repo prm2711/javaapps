@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.zilker.dao.FindPlayerMatches;
-import com.zilker.dao.FindPlayerName;
-import com.zilker.dao.FindTournamentName;
+import com.zilker.bean.Match;
+import com.zilker.bean.MatchWithName;
+import com.zilker.dao.FindPlayer;
+import com.zilker.dao.FindTournament;
 import com.zilker.delegate.PlayerTournamentDelegate;
-import com.zilker.dto.Match;
-import com.zilker.dto.MatchWithName;
 
 /**
  * Servlet implementation class PlayerTournamentServlet

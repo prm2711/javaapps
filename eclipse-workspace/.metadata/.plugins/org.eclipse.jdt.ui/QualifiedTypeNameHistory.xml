@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-    <fullyQualifiedTypeName name="java.util.TimeZone"/>
-    <fullyQualifiedTypeName name="java.util.LinkedList"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="java.util.SimpleTimeZone"/>
-    <fullyQualifiedTypeName name="java.util.Calendar"/>
-    <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
-    <fullyQualifiedTypeName name="com.zilker.validate.ValidateEmail"/>
-    <fullyQualifiedTypeName name="java.util.logging.Level"/>
-    <fullyQualifiedTypeName name="java.util.Comparator"/>
-    <fullyQualifiedTypeName name="java.util.Collections"/>
-    <fullyQualifiedTypeName name="com.zilker.display.DisplayPlayer"/>
     <fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="com.zilker.preparedstatement.ExecuteStatement"/>
@@ -44,7 +32,6 @@
     <fullyQualifiedTypeName name="com.zilker.dao.SortData"/>
     <fullyQualifiedTypeName name="com.zilker.dao.FindTournamentName"/>
     <fullyQualifiedTypeName name="com.zilker.dao.FindPlayerName"/>
-    <fullyQualifiedTypeName name="com.zilker.dto.MatchWithName"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
     <fullyQualifiedTypeName name="com.zilker.delegate.InsertDataDelegate"/>
     <fullyQualifiedTypeName name="com.zilker.delegate.PlayerMatchDelegate"/>
@@ -60,4 +47,17 @@
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="com.zilker.dao.RetrieveData"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
+    <fullyQualifiedTypeName name="org.json.JSONArray"/>
+    <fullyQualifiedTypeName name="com.zilker.dto.MatchWithName"/>
+    <fullyQualifiedTypeName name="com.zilker.dao.RetrieveAllMatches"/>
+    <fullyQualifiedTypeName name="com.zilker.dao.FindTwoPlayersMatches"/>
+    <fullyQualifiedTypeName name="com.zilker.dao.FindPlayerMatches"/>
+    <fullyQualifiedTypeName name="com.zilker.factory.RetrieveMatchesFactory"/>
+    <fullyQualifiedTypeName name="com.zilker.interfaces.RetrieveMatchesInterface"/>
+    <fullyQualifiedTypeName name="com.zilker.dao.RetrieveTournamentMatches"/>
+    <fullyQualifiedTypeName name="com.zilker.dao.UserType"/>
+    <fullyQualifiedTypeName name="com.zilker.delegate.UserTypeDelegate"/>
+    <fullyQualifiedTypeName name="com.zilker.delegate.RetrieveMatchesFactoryDelegate"/>
 </qualifiedTypeNameHistroy>

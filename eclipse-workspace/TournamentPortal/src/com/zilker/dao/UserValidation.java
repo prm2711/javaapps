@@ -9,14 +9,14 @@ import java.util.logging.Logger;
 
 import java.sql.PreparedStatement;
 
+import com.zilker.bean.Match;
+import com.zilker.bean.Player;
 import com.zilker.constant.Constants;
-import com.zilker.dto.Match;
-import com.zilker.dto.Player;
 import com.zilker.utilities.ConnectionSetup;
 
 public class UserValidation {
 	private Logger logger = Logger.getLogger(UserValidation.class.getName());
-
+//Check for valid username and password
 	public boolean userValidate(String user, String pass) {
 		Connection connection = null;
 		ConnectionSetup conn = new ConnectionSetup();

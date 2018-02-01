@@ -1,0 +1,65 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" type="text/css"
+	href="<c:url value = "/css/nav.css"/>">
+</head>
+<body>
+
+
+	<nav>
+
+		<a href="#" id="menu-icon"></a>
+
+		<ul>
+
+			<li>
+				<%
+					if (session.getAttribute("name").equals("admin")) {
+				%> <a href="<c:url value = "/jsp/home.jsp"/>" class="current">Home</a>
+				<%
+					} else if (session.getAttribute("name").equals("user")) {
+				%><a href="<c:url value = "/jsp/userhome.jsp"/>" class="current">Home</a>
+				<%
+					}
+				%>
+			</li>
+			<li>
+			<div class="dropdown">
+					<div class="dropbtn">
+						Add Data
+					</div>
+					<div class="dropdown-content">
+						<a href="<c:url value = "/jsp/inserttour.jsp"/>">
+					Tournament</a>
+			<a href="<c:url value = "/jsp/insertmatch.jsp"/>">Match</a>
+			<a href="<c:url value = "/jsp/insertplayer.jsp"/>">Player</a>
+					</div>
+				</div>
+			</li>
+			<li><a href="<c:url value = "/jsp/inserttour.jsp"/>">
+					Retrieve</a></li>
+			<li><a href="<c:url value = "/jsp/insertmatch.jsp"/>">Match</a></li>
+			<li><a href="<c:url value = "/RetrievePlayerServlet"/>">Player</a></li>
+			<li><div class="dropdown">
+					<div class="dropbtn">
+						Dropdown <i class="fa fa-caret-down"></i>
+					</div>
+					<div class="dropdown-content">
+						<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link
+							3</a>
+					</div>
+				</div></li>
+		</ul>
+
+	</nav>
+
+</body>
+</html>

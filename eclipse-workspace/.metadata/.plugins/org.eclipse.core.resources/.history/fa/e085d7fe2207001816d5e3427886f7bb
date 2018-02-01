@@ -1,0 +1,33 @@
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link rel="stylesheet" type="text/css"
+	href="<c:url value = "/css/nav.css"/>">
+</head>
+<body>
+
+
+	<nav>
+
+		<a href="#" id="menu-icon"></a>
+
+		<ul>
+
+			<li><a href="<c:url value = "/jsp/home.jsp"/>" class="current">Home</a></li>
+			<li><a href="<c:url value = "/jsp/inserttour.jsp"/>">
+					Retrieve</a></li>
+			<li><a href="<c:url value = "/jsp/insertmatch.jsp"/>">Match</a></li>
+<li><a href="RetrievePlayerServlet">Player</a></li>
+		</ul>
+
+	</nav>
+
+</body>
+</html>

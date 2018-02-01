@@ -11,6 +11,7 @@ body {
     background-size: 100% 100%;
     width: 100%;
     margin: 0px;
+    top: 20%;
 }
 
 h1 {
@@ -31,11 +32,10 @@ p {
 }
 
 .login-card {
-	padding: 40px;
-	width: 274px;
-	margin: 0 auto 10px;
+	padding: 0px;
+	width: 100%;
+	margin: 0 auto;
 	border-radius: 2px;
-	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 	overflow: hidden;
 	position: relative;
 }
@@ -47,7 +47,6 @@ p {
 }
 
 .login-card input[type=submit] {
-	width: 100%;
 	display: block;
 	margin-bottom: 10px;
 	position: relative;
@@ -56,7 +55,6 @@ p {
 .login-card input[type=text], input[type=password] {
 	height: 44px;
 	font-size: 16px;
-	width: 100%;
 	margin-bottom: 10px;
 	background: #fff;
 	border: 1px solid #d9d9d9;
@@ -106,3 +104,14 @@ h5 {
 	top: 10px;
 }
 
+.row {
+	width: 100%;
+}
+
+input {
+	width: 100%;
+}
+
+.set-width {
+	margin: 0 auto;
+}

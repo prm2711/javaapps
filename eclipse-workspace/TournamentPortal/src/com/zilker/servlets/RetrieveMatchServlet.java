@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.zilker.bean.Match;
+import com.zilker.bean.MatchWithName;
+import com.zilker.bean.Player;
+import com.zilker.dao.RetrieveAllMatches;
 import com.zilker.dao.RetrieveData;
-import com.zilker.dto.Match;
-import com.zilker.dto.MatchWithName;
-import com.zilker.dto.Player;
+import com.zilker.delegate.RetrieveMatchesFactoryDelegate;
 
 /**
  * Servlet implementation class RetrieveMatchServlet
@@ -35,6 +37,13 @@ public class RetrieveMatchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		RetrieveMatchesFactoryDelegate retrieveMatch =new RetrieveMatchesFactoryDelegate();
+		ArrayList<MatchWithName> matchList = new ArrayList<MatchWithName>();
+		RequestDispatcher rd;
+		matchList=retrieveMatch.findMatches(request,response);
+		rd = request.getRequestDispatcher("/jsp/matchesplayer.jsp");
+		request.setAttribute("list",matchList);
+		rd.forward(request, response);
 	}
 
 	/**
@@ -42,13 +51,7 @@ public class RetrieveMatchServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		RetrieveData retrieveData=new RetrieveData();
-		ArrayList<MatchWithName> matchname = new ArrayList<MatchWithName>();
-		RequestDispatcher rd;
-		matchname=retrieveData.retrieveMatches();
-		rd = request.getRequestDispatcher("/jsp/matchesplayer.jsp");
-		request.setAttribute("list",matchname);
-		rd.forward(request, response);
+		
 	}
 
 }

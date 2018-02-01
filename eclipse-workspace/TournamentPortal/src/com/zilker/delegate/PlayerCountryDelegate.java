@@ -7,12 +7,12 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.zilker.bean.MatchWithName;
+import com.zilker.bean.Player;
 import com.zilker.dao.FindCountry;
 import com.zilker.dao.FindPlayerMatches;
-import com.zilker.dao.FindPlayerName;
+import com.zilker.dao.FindPlayer;
 import com.zilker.dao.RetrieveData;
-import com.zilker.dto.MatchWithName;
-import com.zilker.dto.Player;
 
 public class PlayerCountryDelegate {
 

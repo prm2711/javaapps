@@ -5,11 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>E-Tournica</title>
 <link rel="stylesheet" type="text/css"
 	href="<c:url value = "/css/login.css"/>">
+<link rel="stylesheet" type="text/css"
+	href="<c:url value = "/css/media-query.css"/>">
 </head>
 <body>
 	<h1>
@@ -25,22 +26,28 @@
 			<h5>${msg }</h5>
 		</center>
 		<h1>
-			<b>Log-in</b>
+			<b>Login</b>
 		</h1>
 		<br>
 		<form method="post" action="<c:url value = "/UserValidationServlet"/>"
 			onsubmit="return validateForm()">
 			<div class="row">
-				<input type="text" name="username" placeholder="Username"
-					id="username">
+				<div class="set-width col-xs-12 col-sm-10 col-md-8 col-lg-4">
+					<input type="text" name="username" placeholder="Username"
+						id="username">
+				</div>
 			</div>
 			<div class="row">
-				<input type="password" name="password" placeholder="Password"
-					id="password">
+				<div class="set-width col-xs-12 col-sm-10 col-md-8 col-lg-4">
+					<input type="password" name="password" placeholder="Password"
+						id="password">
+				</div>
 			</div>
 			<div class="row">
-			<input type="submit" name="login" class="login login-submit"
-				value="Login">
+				<div class="set-width col-xs-12 col-sm-10 col-md-8 col-lg-4">
+					<input type="submit" name="login" class="login login-submit"
+						value="Login">
+				</div>
 			</div>
 		</form>
 	</div>

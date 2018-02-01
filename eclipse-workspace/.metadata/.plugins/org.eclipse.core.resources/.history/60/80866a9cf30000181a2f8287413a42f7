@@ -1,5 +1,0 @@
-package net.vishal.spring3.controller;
-
-public class HelloWorldController {
-
-}

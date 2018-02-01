@@ -1,0 +1,13 @@
+package com.zilker.factory;
+
+import com.zilker.dto.MatchWithName;
+
+public class RetrieveMatchesFactory {
+	 public MatchWithName getType(String matchType){
+	      if(matchType == null){
+	         return null;
+	      }		
+	      
+	      return null;
+	   }
+}

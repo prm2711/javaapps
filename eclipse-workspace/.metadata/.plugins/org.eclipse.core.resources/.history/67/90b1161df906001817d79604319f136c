@@ -1,0 +1,15 @@
+package com.zilker.delegate;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.zilker.dao.UserType;
+
+public class UserTypeDelegate {
+public String findUserType(HttpServletRequest request, HttpServletResponse response) {
+	String user=null;
+	UserType userType=new UserType();
+	user=userType.retrieveType();
+	return user;
+}
+}

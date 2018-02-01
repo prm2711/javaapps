@@ -1,0 +1,11 @@
+package com.zilker.delegate;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class UserTypeDelegate {
+public String findUserType(HttpServletRequest request, HttpServletResponse response) {
+	String user=null;
+	return user;
+}
+}
